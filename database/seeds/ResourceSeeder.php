@@ -11,6 +11,6 @@ class ResourceSeeder extends Seeder
      */
     public function run()
     {
-        
+        factory(App\Resource::class, 150)->create();
     }
 }

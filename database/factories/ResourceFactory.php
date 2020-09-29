@@ -10,7 +10,7 @@ $factory->define(Resource::class, function (Faker $faker) {
     $userIds = App\User::select('id')->get()->pluck('id')->toArray();
     array_push($userIds,"all");
     return [
-        'name' => $faker->name,
+        'name' => $faker->unique()->buildingNumber,
         'user_id' => $faker->randomElement($userIds),
     ];
 });
